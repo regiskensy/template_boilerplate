@@ -1,0 +1,93 @@
+services:
+  postgres:
+    container_name: ${COMPOSE_PROJECT_NAME}_postgres
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - stack_network
+    expose:
+      - "5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    container_name: ${COMPOSE_PROJECT_NAME}_pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - stack_network
+
+  php:
+    container_name: ${COMPOSE_PROJECT_NAME}_php
+    image: ${COMPOSE_PROJECT_NAME}/php
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    working_dir: /var/www/html
+    volumes:
+      - ./public:/var/www/html
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+    environment:
+      - TZ=${TZ}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_TYPE=${DB_TYPE}
+      - DB_PREP=${DB_PREP}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - stack_network
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep php-fpm && php -r 'try { new PDO(\"pgsql:host=\" . getenv(\"DB_HOST\") . \";port=\" . getenv(\"DB_PORT\") . \";dbname=\" . getenv(\"DB_NAME\"), getenv(\"DB_USER\"), getenv(\"DB_PASS\")); exit(0); } catch (Exception $$e) { exit(1); }'"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  nginx:
+    container_name: ${COMPOSE_PROJECT_NAME}_nginx
+    image: nginx:latest
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      php:
+        condition: service_healthy
+    networks:
+      - stack_network
+
+networks:
+  stack_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    name: ${COMPOSE_PROJECT_NAME}_postgres_data
+  pgadmin_data:
+    name: ${COMPOSE_PROJECT_NAME}_pgadmin_data

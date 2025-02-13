@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+  <SystemUser>
+    <id>1</id>
+    <name>Administrator</name>
+    <login>admin</login>
+    <email>admin@admin.net</email>
+    <otp_secret/>
+    <active>Y</active>
+  </SystemUser>
+  <SystemUser>
+    <id>2</id>
+    <name>User</name>
+    <login>user</login>
+    <email>user@user.net</email>
+    <otp_secret/>
+    <active>Y</active>
+  </SystemUser>
+</dataset>

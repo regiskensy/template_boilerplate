@@ -1,0 +1,3 @@
+Id,Nome,Login,Email,2FA,Ativo
+1,Administrator,admin,admin@admin.net,,Y
+2,User,user,user@user.net,,Y

@@ -1,0 +1,65 @@
+Id,"Classe de controle",Nome,"Caminho menu"
+1,SystemAdministrationDashboard,"System Administration Dashboard",SystemAdministrationDashboard
+2,SystemProgramForm,"System Program Form",SystemProgramForm
+3,SystemProgramList,"System Program List",SystemProgramList
+4,SystemGroupForm,"System Group Form",SystemGroupForm
+5,SystemGroupList,"System Group List",SystemGroupList
+6,SystemUnitForm,"System Unit Form",SystemUnitForm
+7,SystemUnitList,"System Unit List",SystemUnitList
+8,SystemRoleForm,"System Role Form",SystemRoleForm
+9,SystemRoleList,"System Role List",SystemRoleList
+10,SystemUserForm,"System User Form",SystemUserForm
+11,SystemUserList,"System User List",SystemUserList
+12,SystemPreferenceForm,"System Preference form",SystemPreferenceForm
+13,SystemLogDashboard,"System Log Dashboard",SystemLogDashboard
+14,SystemAccessLogList,"System Access Log",SystemAccessLogList
+15,SystemChangeLogView,"System ChangeLog View",SystemChangeLogView
+16,SystemSqlLogList,"System Sql Log",SystemSqlLogList
+17,SystemRequestLogList,"System Request Log",SystemRequestLogList
+18,SystemRequestLogView,"System Request Log View",SystemRequestLogView
+19,SystemPHPErrorLogView,"System PHP Error",SystemPHPErrorLogView
+20,SystemSessionVarsView,"System Session vars",SystemSessionVarsView
+21,SystemDatabaseExplorer,"System Database Browser",SystemDatabaseExplorer
+22,SystemTableList,"System Table List",SystemTableList
+23,SystemDataBrowser,"System Data Browser",SystemDataBrowser
+24,SystemSQLPanel,"System SQL Panel",SystemSQLPanel
+25,SystemModulesCheckView,"System Modules",SystemModulesCheckView
+26,SystemFilesDiff,"System files diff",SystemFilesDiff
+27,SystemInformationView,"System Information",SystemInformationView
+28,SystemPHPInfoView,"System PHP Info",SystemPHPInfoView
+29,CommonPage,"Common Page",CommonPage
+30,WelcomeView,"Welcome View",WelcomeView
+31,WelcomeDashboardView,"Welcome dashboard",WelcomeDashboardView
+32,SystemProfileView,"System Profile View",SystemProfileView
+33,SystemProfileForm,"System Profile Form",SystemProfileForm
+34,SystemNotificationList,"System Notification List",SystemNotificationList
+35,SystemNotificationFormView,"System Notification Form View",SystemNotificationFormView
+36,SystemSupportForm,"System Support form",SystemSupportForm
+37,SystemProfile2FAForm,"System Profile 2FA Form",SystemProfile2FAForm
+38,SystemWikiList,"System Wiki list",SystemWikiList
+39,SystemWikiForm,"System Wiki form",SystemWikiForm
+40,SystemWikiPagePicker,"System Wiki page picker",SystemWikiPagePicker
+41,SystemPostList,"System Post list",SystemPostList
+42,SystemPostForm,"System Post form",SystemPostForm
+43,SystemScheduleList,"System schedule list",SystemScheduleList
+44,SystemScheduleForm,"System schedule form",SystemScheduleForm
+45,SystemScheduleLogList,"System schedule log",SystemScheduleLogList
+46,SystemMessageForm,"System Message Form",SystemMessageForm
+47,SystemMessageList,"System Message List",SystemMessageList
+48,SystemMessageFormView,"System Message Form View",SystemMessageFormView
+49,SystemDriveList,"System Documents",SystemDriveList
+50,SystemFolderForm,"System Folder form",SystemFolderForm
+51,SystemFolderShareForm,"System Share folder",SystemFolderShareForm
+52,SystemDocumentShareForm,"System Share document",SystemDocumentShareForm
+53,SystemDocumentFormWindow,"System Document properties",SystemDocumentFormWindow
+54,SystemFolderFormView,"System Folder properties",SystemFolderFormView
+55,SystemDriveDocumentUploadForm,"System Document upload",SystemDriveDocumentUploadForm
+56,SystemPostFeedView,"Post View list",SystemPostFeedView
+57,SystemPostCommentForm,"Post Comment form",SystemPostCommentForm
+58,SystemPostCommentList,"Post Comment list",SystemPostCommentList
+59,SystemWikiSearchList,"System Wiki search",SystemWikiSearchList
+60,SystemWikiView,"System Wiki view",SystemWikiView
+61,SystemMessageTagForm,"System Message Tag form",SystemMessageTagForm
+62,SystemContactsList,"System Contacts list",SystemContactsList
+63,SystemTextDocumentEditor,"Text document editor",SystemTextDocumentEditor
+64,SystemDriveDocumentCreateForm,"System document create form",SystemDriveDocumentCreateForm
