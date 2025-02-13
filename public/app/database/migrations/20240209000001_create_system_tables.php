@@ -496,5 +496,19 @@ class CreateSystemTables extends AbstractMigration
             ->addIndex(['system_group_id'], ['name' => 'sys_wiki_share_group_group_idx'])
             ->addIndex(['system_wiki_page_id'], ['name' => 'sys_wiki_share_group_page_idx'])
             ->create();
+
+        // Create system_schedule
+        $this->table('system_schedule', ['id' => false, 'primary_key' => ['id']])
+            ->addColumn('id', 'integer')
+            ->addColumn('schedule_type', 'string', ['limit' => 1])
+            ->addColumn('title', 'string', ['limit' => 256])
+            ->addColumn('class_name', 'string', ['limit' => 256])
+            ->addColumn('method', 'string', ['limit' => 256])
+            ->addColumn('monthday', 'string', ['limit' => 2])
+            ->addColumn('weekday', 'string', ['limit' => 1])
+            ->addColumn('hour', 'string', ['limit' => 2])
+            ->addColumn('minute', 'string', ['limit' => 2])
+            ->addColumn('active', 'string', ['limit' => 1])
+            ->create();
     }
 } 
